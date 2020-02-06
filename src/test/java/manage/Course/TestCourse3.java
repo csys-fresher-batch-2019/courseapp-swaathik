@@ -1,5 +1,5 @@
 package manage.Course;
-import com.StudentManagement2.Course.CourseImplements;
+import com.student.course.CourseImplements;
 
 public class TestCourse3 {
 

@@ -1,4 +1,4 @@
-package com.StudentManagement2.Course;
+package com.student.course;
 public class CourseClass {
 	private int courseCode;
 	private String courseName;

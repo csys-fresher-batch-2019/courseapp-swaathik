@@ -1,11 +1,11 @@
-package com.StudentManagement2.Basics;
+package com.student.basics;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Types;
 
-import com.StudentManagement2.Student.StudentClass;
+import com.student.student.StudentClass;
 
 
 public class UserService {

@@ -1,4 +1,4 @@
-package com.StudentManagement2.Batch;
+package com.student.batch;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package manage.Batch;
 
-import com.StudentManagement2.Basics.DAOFactory;
-import com.StudentManagement2.Batch.BatchDAO;
+import com.student.basics.DAOFactory;
+import com.student.batch.BatchDAO;
 
 public class TestBatch1 {
 

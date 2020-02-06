@@ -1,7 +1,7 @@
 package manage.Course;
 import java.util.Scanner;
 
-import com.StudentManagement2.client.WalletAPI;
+import com.student.client.WalletAPI;
 	public class TestWallet {
 
 

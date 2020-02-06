@@ -1,4 +1,4 @@
-package com.StudentManagement2.Student;
+package com.student.student;
 
 import java.time.LocalDate;
 

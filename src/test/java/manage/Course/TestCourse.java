@@ -1,10 +1,10 @@
 package manage.Course;
 import java.util.Scanner;
 
-import com.StudentManagement2.Basics.DAOFactory;
-import com.StudentManagement2.Basics.Logger;
-import com.StudentManagement2.Course.CourseClass;
-import com.StudentManagement2.Course.CourseDAO;
+import com.student.course.CourseClass;
+import com.student.course.CourseDAO;
+import com.student.basics.DAOFactory;
+import com.student.basics.Logger;
 
 public class TestCourse {
 	private static Logger LOGGER = Logger.getInstance();

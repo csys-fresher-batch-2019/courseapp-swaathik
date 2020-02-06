@@ -1,14 +1,14 @@
-package com.StudentManagement2.Student;
+package com.student.student;
 
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
-import com.StudentManagement2.Basics.ConnectionUtil;
-import com.StudentManagement2.Basics.Logger;
+import com.student.basics.ConnectionUtil;
+import com.student.basics.Logger;
 
-public class StudentImplements implements StudentDAO {
+public class StudentImplementation implements StudentDAO {
 	private static Logger LOGGER = Logger.getInstance();
 
 	public void addStudents(StudentClass student) throws Exception {

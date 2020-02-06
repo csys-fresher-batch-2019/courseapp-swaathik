@@ -1,4 +1,4 @@
-package com.StudentManagement2.Basics;
+package com.student.basics;
 
 public class Logger {
 public static Logger getInstance() {

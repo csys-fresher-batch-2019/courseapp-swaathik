@@ -1,4 +1,4 @@
-package com.StudentManagement2.Batch;
+package com.student.batch;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import com.StudentManagement2.Basics.ConnectionUtil;
+
+import com.student.basics.ConnectionUtil;
 
 public class BatchImplements implements BatchDAO {
 	public void addBatches(BatchClass batch) throws Exception {

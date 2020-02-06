@@ -2,10 +2,10 @@ package manage.Batch;
 
 import java.time.LocalDate;
 
-import com.StudentManagement2.Basics.DAOFactory;
-import com.StudentManagement2.Basics.Logger;
-import com.StudentManagement2.Batch.BatchClass;
-import com.StudentManagement2.Batch.BatchDAO;
+import com.student.basics.DAOFactory;
+import com.student.basics.Logger;
+import com.student.batch.BatchClass;
+import com.student.batch.BatchDAO;
 
 import java.util.Scanner;
 public class TestBatch {

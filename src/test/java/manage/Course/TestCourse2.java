@@ -1,8 +1,8 @@
 package manage.Course;
 
-import com.StudentManagement2.Basics.DAOFactory;
-import com.StudentManagement2.Basics.Logger;
-import com.StudentManagement2.Course.CourseDAO;
+import com.student.course.CourseDAO;
+import com.student.basics.DAOFactory;
+import com.student.basics.Logger;
 
 import java.util.Scanner;
 

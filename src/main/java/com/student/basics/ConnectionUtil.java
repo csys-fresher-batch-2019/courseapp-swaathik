@@ -1,4 +1,4 @@
-package com.StudentManagement2.Basics;
+package com.student.basics;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package com.StudentManagement2.Payment;
+package com.student.payment;
 
 import java.util.List;
 

@@ -1,8 +1,9 @@
 package manage.Student;
 
-import com.StudentManagement2.Basics.DAOFactory;
-import com.StudentManagement2.Basics.Logger;
-import com.StudentManagement2.Student.StudentDAO;
+import com.student.student.StudentDAO;
+import com.student.basics.DAOFactory;
+import com.student.basics.Logger;
+
 import java.util.Scanner;
 
 public class TestStudent2 {

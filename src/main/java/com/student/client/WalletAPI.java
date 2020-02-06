@@ -1,4 +1,4 @@
-package com.StudentManagement2.client;
+package com.student.client;
 
 import citipe.servicelayer.UserService;
 

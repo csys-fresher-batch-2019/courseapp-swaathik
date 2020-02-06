@@ -1,4 +1,4 @@
-package com.StudentManagement2.Course;
+package com.student.course;
 
 import java.util.List;
 

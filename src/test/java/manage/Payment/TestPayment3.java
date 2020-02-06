@@ -1,8 +1,9 @@
 package manage.Payment;
 
-import com.StudentManagement2.Basics.DAOFactory;
-import com.StudentManagement2.Basics.Logger;
-import com.StudentManagement2.Payment.PaymentDAO;
+import com.student.payment.PaymentDAO;
+import com.student.basics.DAOFactory;
+import com.student.basics.Logger;
+
 import java.util.Scanner;
 
 public class TestPayment3  {

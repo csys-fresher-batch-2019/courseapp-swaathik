@@ -2,10 +2,10 @@ package manage.Payment;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-import com.StudentManagement2.Basics.DAOFactory;
-import com.StudentManagement2.Basics.Logger;
-import com.StudentManagement2.Payment.PaymentClass;
-import com.StudentManagement2.Payment.PaymentDAO;
+import com.student.payment.PaymentClass;
+import com.student.payment.PaymentDAO;
+import com.student.basics.DAOFactory;
+import com.student.basics.Logger;
 public class TestPayment {
 	private static Logger LOGGER = Logger.getInstance();
 	public static void main(String[] args) throws Exception{

@@ -1,4 +1,4 @@
-package com.StudentManagement2.Course;
+package com.student.course;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.StudentManagement2.Basics.ConnectionUtil;
-import com.StudentManagement2.Basics.Logger;
+import com.student.basics.ConnectionUtil;
+import com.student.basics.Logger;
 
 public class CourseImplements implements CourseDAO{
 	private static Logger LOGGER = Logger.getInstance();

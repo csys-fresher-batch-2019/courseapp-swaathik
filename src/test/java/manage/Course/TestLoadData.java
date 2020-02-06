@@ -4,8 +4,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-import com.StudentManagement2.Course.CourseClass;
-import com.StudentManagement2.Course.CourseImplements;
+import com.student.course.CourseClass;
+import com.student.course.CourseImplements;
 
 public class TestLoadData {
 
