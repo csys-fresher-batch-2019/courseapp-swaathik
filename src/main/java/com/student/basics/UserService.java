@@ -9,6 +9,8 @@ import com.student.student.StudentClass;
 
 
 public class UserService {
+	private static Logger LOGGER = Logger.getInstance();
+
 	private UserService() {
 	    throw new IllegalStateException("Utility class");
 	  }
@@ -21,11 +23,11 @@ public class UserService {
 			String status=stmt.getString(3);
 			if(status.equals("Success")) {
 
-			Logger.log("Logged In");
+			LOGGER.debug("Logged In");
 			return true;
 			}
 			else {
-			Logger.log("Logged out");
+			LOGGER.debug("Logged out");
 			return false;
 			}
 		} catch (Exception e) {

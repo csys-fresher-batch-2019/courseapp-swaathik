@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.List;
 import com.student.basics.ConnectionUtil;
 import com.student.basics.Logger;
 
@@ -40,7 +39,8 @@ public class StudentImplementation implements StudentDAO {
 			}
 	}
 
-	public List<StudentClass> orderBy(int batchCode)  {
+	public String orderBy(int batchCode)  {
+	
 			String fullName = null;
 	    String sql = "select full_name from students where batch_code=?";	
 	  		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);ResultSet rs = pst.executeQuery();) {
@@ -50,9 +50,9 @@ public class StudentImplementation implements StudentDAO {
 					LOGGER.debug(fullName);
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				LOGGER.debug(e);
 			}
-	  		return null;
+	  		return fullName;
 	  			 
 	}
 
