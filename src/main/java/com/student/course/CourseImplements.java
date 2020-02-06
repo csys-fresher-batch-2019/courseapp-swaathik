@@ -23,8 +23,7 @@ public class CourseImplements implements CourseDAO{
 			int rows = pst.executeUpdate();
 			LOGGER.info("No of rows inserted : "+rows);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.debug(e);
 		}
 		
 	}
@@ -38,8 +37,7 @@ public class CourseImplements implements CourseDAO{
 			int rows = pst.executeUpdate();
 			LOGGER.info("No of rows Updated : "+rows);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.debug(e);
 		}
 		
 	}
@@ -51,8 +49,7 @@ public class CourseImplements implements CourseDAO{
 			int rows = pst.executeUpdate();
 			LOGGER.info("No of rows deleted : "+rows);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.debug(e);
 		}
 	}
 
@@ -74,8 +71,7 @@ public class CourseImplements implements CourseDAO{
 				c.add(course);
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.debug(e);
 		}
 		return c;
 	}

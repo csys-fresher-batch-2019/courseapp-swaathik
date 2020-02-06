@@ -22,12 +22,10 @@ public class StudentImplementation implements StudentDAO {
 			pst.setDate(6, Date.valueOf(student.getDateOfJoining()));
 			pst.setString(7, student.getUserName());
 			pst.setString(8, student.getPassWord());
-			//Step 3:Execute the Query
 			int rows = pst.executeUpdate();
 			LOGGER.info("No of rows inserted : "+rows);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.debug(e);
 		}
 	}
 
@@ -38,8 +36,7 @@ public class StudentImplementation implements StudentDAO {
 				int rows = pst.executeUpdate();
 				LOGGER.info("No of rows updated : "+rows);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				LOGGER.debug(e);
 			}
 	}
 
@@ -53,7 +50,6 @@ public class StudentImplementation implements StudentDAO {
 					LOGGER.debug(fullName);
 				}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	  		return null;
@@ -68,8 +64,7 @@ public class StudentImplementation implements StudentDAO {
 			int rows = pst.executeUpdate();
 			LOGGER.info("No of rows deleted : "+rows);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.debug(e);
 		}
 		
 		
