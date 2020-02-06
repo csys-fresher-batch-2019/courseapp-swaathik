@@ -12,12 +12,8 @@ public class TestStudent {
 	public static void main (String[] args) throws Exception{
 		Scanner in = new Scanner(System.in);
 		StudentClass s1 = new StudentClass();
-		LOGGER.getInput("Enter Admission No : ");
-		s1.setAdmNo(in.nextInt());
 		LOGGER.getInput("Enter Batch Code : ");
 		s1.setBatchCode(in.nextInt());
-		LOGGER.getInput("Enter Roll No : ");
-		s1.setRollNo(in.nextInt());
 		LOGGER.getInput("Enter Full Name : ");
 		s1.setFullName(in.next());
 		LOGGER.getInput("Enter Father Name : ");
@@ -28,12 +24,15 @@ public class TestStudent {
 		String phone = in.next();
 		s1.setPhoneNo(phone);
 		LOGGER.getInput("Enter Date Of Joining : ");
-		s1.dateOfJoining = LocalDate.parse(in.next());
+		s1.setDateOfJoining(LocalDate.parse(in.next()));
+		LOGGER.getInput("Enter the username : (for login)");
+		s1.setUserName(in.next());
+		LOGGER.getInput("Enter the password : (for login)");
+		s1.setPassWord(in.next());
 //		StudentImplements daoImpl2 = new StudentImplements();
 //		daoImpl2.addStudents(s1);
 		StudentDAO dao = DAOFactory.getStudentDAO();
 		dao.addStudents(s1);
 		in.close();
-		//456	131	42	Sathya	Murali	sathyamurali@gmail.com	9837489490	12-06-08
 }
 }

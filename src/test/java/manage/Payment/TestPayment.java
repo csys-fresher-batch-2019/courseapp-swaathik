@@ -11,8 +11,6 @@ public class TestPayment {
 	public static void main(String[] args) throws Exception{
 		Scanner in = new Scanner(System.in);
 		PaymentClass p1 = new PaymentClass();
-		LOGGER.getInput("Enter ReceiptNo : ");
-		p1.setReceiptNo(in.nextInt());
 		LOGGER.getInput("Enter Admission No : ");
 		p1.setAdmNo(in.nextInt());
 		LOGGER.getInput("Enter Amount Paid : ");

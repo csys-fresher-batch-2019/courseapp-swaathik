@@ -5,8 +5,17 @@ import java.time.LocalDate;
 public class BatchClass {
 	private int batchCode;
 	private int courseCode;
+	private String courseName;
 	private LocalDate startingDate;
 	private LocalDate endDate;
+	public String getCourseName() {
+		return courseName;
+	}
+	public void setCourseName(String courseName2) {
+		this.courseName = courseName2;
+	}
+
+	
 	public int getBatchCode() {	
 		return batchCode;
 	}
@@ -36,7 +45,7 @@ public class BatchClass {
 	
 	@Override
 	public String toString() {
-		return "Batches [batchCode=" + batchCode + ", courseCode=" + courseCode + ", startingDate=" + startingDate
+		return "Batches [batchCode=" + batchCode + ", courseCode=" + courseCode + ", courseName=" + courseName + ", startingDate=" + startingDate
 				+ ", endDate=" + endDate + "]";
 	}
 }

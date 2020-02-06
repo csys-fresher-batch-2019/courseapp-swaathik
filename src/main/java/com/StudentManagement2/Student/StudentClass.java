@@ -5,11 +5,26 @@ import java.time.LocalDate;
 public class StudentClass {
 	private int admNo;
 	private int batchCode;
-	private int rollNo;
 	private String fullName;
 	private String fatherNameOrGuardianName;
 	private String emailId;
 	private String phoneNo;
+	private String userName;
+	private String passWord;
+	private LocalDate dateOfJoining;
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getPassWord() {
+		return passWord;
+	}
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+	
 	public String getPhoneNo() {
 		return phoneNo;
 	}
@@ -24,12 +39,6 @@ public class StudentClass {
 	}
 	public void setBatchCode(int batchCode) {
 		this.batchCode = batchCode;
-	}
-	public int getRollNo() {
-		return rollNo;
-	}
-	public void setRollNo(int rollNo) {
-		this.rollNo = rollNo;
 	}
 	public String getFullName() {
 		return fullName;
@@ -52,18 +61,18 @@ public class StudentClass {
 	public LocalDate getDateOfJoining() {
 		return dateOfJoining;
 	}
-	public void setDateOfJoining(LocalDate dateOfJoining) {
-		this.dateOfJoining = dateOfJoining;
+	public void setDateOfJoining(LocalDate doj) {
+		this.dateOfJoining = doj;
 	}
 	public void setPhoneNo(String phoneNo) {
 		if(phoneNo.length()<10 || phoneNo.length()>10)
 			throw new IllegalArgumentException("Invalid Phone Number!!!");
 		this.phoneNo = phoneNo;
 	}
-	public LocalDate dateOfJoining;
+	
 	@Override
 	public String toString() {
-		return "StudentClass [admNo=" + admNo + ", batchCode=" + batchCode + ", rollNo=" + rollNo + ", fullName="
+		return "StudentClass [batchCode=" + batchCode + ",  fullName="
 				+ fullName + ", fatherNameOrGuardianName=" + fatherNameOrGuardianName + ", emailId=" + emailId
 				+ ", phoneNo=" + phoneNo + ", dateOfJoining=" + dateOfJoining + "]";
 	}

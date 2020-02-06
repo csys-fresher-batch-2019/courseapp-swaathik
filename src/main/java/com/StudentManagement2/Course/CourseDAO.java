@@ -12,8 +12,12 @@ public interface CourseDAO {
 	//delete from courses where course_code=?
 	void deleteCourses(int courseCode) throws Exception;
 	
-	//select course_name,course_code from courses order by course_name
+	//select course_name from courses where course_code=?
 	List<CourseClass> orderByCourseName() throws Exception;
+	//select course_fee from courses where course_code=? 
+	int getCourseFees(int course_code) throws Exception; 
+	
+  
 	
 
 }

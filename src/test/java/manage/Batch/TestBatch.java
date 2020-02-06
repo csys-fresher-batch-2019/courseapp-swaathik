@@ -20,6 +20,9 @@ public class TestBatch {
 		LOGGER.getInput("Enter CourseCode : ");
 		int b = in.nextInt();
 		b1.setCourseCode(b);
+		LOGGER.getInput("Enter CourseName : ");
+	    String f = in.next();
+		b1.setCourseName(f);
 		LOGGER.getInput("Enter StartingDate : ");
 		LocalDate c = LocalDate.parse(in.next());
 		b1.setStartingDate(c);

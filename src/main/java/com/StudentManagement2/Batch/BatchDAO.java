@@ -7,7 +7,7 @@ public interface BatchDAO {
 	void addBatches(BatchClass batch) throws Exception;
 	
 
-	//select starting_date,end_date from batches order by batch_code;
+	//select batch_code,course_code,course_name from batches;
 	List<BatchClass>displayBatchCodeCourseCode() throws Exception;
 	
 	
