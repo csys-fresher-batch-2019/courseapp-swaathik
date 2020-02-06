@@ -15,7 +15,7 @@ public interface CourseDAO {
 	//select course_name from courses where course_code=?
 	List<CourseClass> orderByCourseName() throws Exception;
 	//select course_fee from courses where course_code=? 
-	int getCourseFees(int course_code) throws Exception; 
+	//int getCourseFees(int course_code) throws Exception; 
 	
   
 	
