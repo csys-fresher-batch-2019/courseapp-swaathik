@@ -64,7 +64,7 @@ public class CourseImplements implements CourseDAO{
 				String courseName = rs.getString("course_name");
 				LOGGER.debug("Course Name : "+courseName);
 				int courseCode = rs.getInt("course_code");
-				System.out.println("Course Code : "+courseCode);
+				LOGGER.debug("Course Code : "+courseCode);
 				CourseClass course = new CourseClass();
 				course.setCourseName(courseName);
 				course.setCourseCode(courseCode);;
@@ -76,23 +76,3 @@ public class CourseImplements implements CourseDAO{
 		return c;
 	}
 }
-
-//	public int getCourseFees(int courseCode) throws Exception {
-//		int courseFee = 0;
-//		 String sql = "select course_fee from courses where course_code=?";
-//		    
-//		  		
-//		  		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);ResultSet rs = pst.executeQuery();) {
-//					pst.setInt(1, courseCode);
-//					
-//					while(rs.next()) {
-//						 courseFee = rs.getInt("course_fee");
-//						LOGGER.debug(courseFee);
-//					}
-//				} catch (Exception e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//		  		return courseFee;
-//	}
-//}

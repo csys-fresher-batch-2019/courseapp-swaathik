@@ -33,7 +33,6 @@ public class BatchImplements implements BatchDAO {
 		try (Connection connection = ConnectionUtil.getConnection(); PreparedStatement pst = connection.prepareStatement(sql);)		
 		{
 			pst.setInt(1,batchCode);
-			System.out.println(sql);
 			int rows = pst.executeUpdate();
 			LOGGER.info("No of rows deleted : "+rows);
 		} catch (Exception e) {
