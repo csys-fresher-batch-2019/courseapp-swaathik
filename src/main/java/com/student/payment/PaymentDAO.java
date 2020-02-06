@@ -4,12 +4,12 @@ import java.util.List;
 
 public interface PaymentDAO {
 
-	void addPayments(PaymentClass payment) throws Exception;
+	void addPayments(PaymentClass payment) ;
 	
-	void updatePayments(int receiptNo) throws Exception;
+	void updatePayments(int receiptNo) ;
 	
-	List<PaymentClass> displayAmountPaid () throws Exception;
+	List<PaymentClass> displayAmountPaid ();
 	
-	void deletePayments(int receiptNo) throws Exception;
+	void deletePayments(int receiptNo);
 	
 }

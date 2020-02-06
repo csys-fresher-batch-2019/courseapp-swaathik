@@ -11,7 +11,7 @@ import com.student.basics.Logger;
 public class StudentImplementation implements StudentDAO {
 	private static Logger LOGGER = Logger.getInstance();
 
-	public void addStudents(StudentClass student) throws Exception {
+	public void addStudents(StudentClass student)  {
 		String sql = "insert into students(adm_no,batch_code,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining,stud_user_name,stud_password)values(adm_no_sq.nextval,?,?,?,?,?,?,?,?)";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
 			pst.setInt(1, student.getBatchCode());
@@ -29,7 +29,7 @@ public class StudentImplementation implements StudentDAO {
 		}
 	}
 
-	public void updateStudent(int admNo) throws Exception {
+	public void updateStudent(int admNo)  {
 			String sql = "update Students set email_id = 'anusha@gmail.com' where adm_no=?";
 			try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
 				pst.setInt(1, admNo);
@@ -40,7 +40,7 @@ public class StudentImplementation implements StudentDAO {
 			}
 	}
 
-	public List<StudentClass> orderBy(int batchCode) throws Exception {
+	public List<StudentClass> orderBy(int batchCode)  {
 			String fullName = null;
 	    String sql = "select full_name from students where batch_code=?";	
 	  		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);ResultSet rs = pst.executeQuery();) {
@@ -56,7 +56,7 @@ public class StudentImplementation implements StudentDAO {
 	  			 
 	}
 
-	public void deleteStudent(int admNo) throws Exception {
+	public void deleteStudent(int admNo)  {
 		String sql = "update Students set student_active = 0 where adm_no=?";
 		
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {

@@ -20,9 +20,11 @@ public class BatchClass {
 		return batchCode;
 	}
 	public void setBatchCode(int batchCode) {
-		if(batchCode >= 10000)
-		throw new IllegalArgumentException("Invalid Batch Code!!!");
-		this.batchCode = batchCode;
+		if(batchCode >= 10000) {
+			throw new IllegalArgumentException("Invalid Batch Code!!!");
+		}
+			this.batchCode = batchCode;
+		
 	}
 	public int getCourseCode() {
 		return courseCode;

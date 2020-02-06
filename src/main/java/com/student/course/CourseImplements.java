@@ -12,7 +12,7 @@ import com.student.basics.Logger;
 
 public class CourseImplements implements CourseDAO{
 	private static Logger LOGGER = Logger.getInstance();
-	public void addCourses(CourseClass course) throws Exception {
+	public void addCourses(CourseClass course) {
 		String sql = "insert into courses (course_code,course_name,course_fee,course_duration_days,pre_req) values(?,?,?,?,?)";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
 			pst.setInt(1, course.getCourseCode());
@@ -28,7 +28,7 @@ public class CourseImplements implements CourseDAO{
 		
 	}
 
-	public void updateCourses(int courseCode) throws Exception {
+	public void updateCourses(int courseCode)  {
 		String sql = "update courses set course_duration_days=45 where course_code=?";
 		
 		
@@ -42,7 +42,7 @@ public class CourseImplements implements CourseDAO{
 		
 	}
 
-	public void deleteCourses(int courseCode) throws Exception {
+	public void deleteCourses(int courseCode) {
 		String sql = "delete from courses where course_code=?";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
 			pst.setInt(1,courseCode);
@@ -53,7 +53,7 @@ public class CourseImplements implements CourseDAO{
 		}
 	}
 
-	public List<CourseClass> orderByCourseName() throws Exception {
+	public List<CourseClass> orderByCourseName()  {
 		List<CourseClass> c = new ArrayList<>();
 		String sql = "select course_name,course_code from courses order by course_name";
 		

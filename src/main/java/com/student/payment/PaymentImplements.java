@@ -11,7 +11,7 @@ import com.student.basics.ConnectionUtil;
 import com.student.basics.Logger;
 public class PaymentImplements implements PaymentDAO {
 	private static Logger LOGGER = Logger.getInstance();
-	public void addPayments(PaymentClass payment) throws Exception {
+	public void addPayments(PaymentClass payment)  {
 		String sql = "insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks) values(receipt_no_sq.nextval,?,?,?,?)";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
 			pst.setInt(1,payment.getAdmNo());
@@ -25,7 +25,7 @@ public class PaymentImplements implements PaymentDAO {
 		}	
 	}
 
-	public void updatePayments(int receiptNo) throws Exception {
+	public void updatePayments(int receiptNo)  {
 		String sql = "update payments set re_marks='Cheque' where receipt_no=?";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
 			pst.setInt(1,receiptNo);
@@ -36,7 +36,7 @@ public class PaymentImplements implements PaymentDAO {
 		}		
 	}
 
-	public List<PaymentClass> displayAmountPaid() throws Exception {
+	public List<PaymentClass> displayAmountPaid()  {
 		List<PaymentClass> p = new ArrayList<>();
 		String sql = "select receipt_no,amount_paid from payments";
 		try(Connection connection = ConnectionUtil.getConnection();Statement stmt = connection.createStatement();ResultSet rs = stmt.executeQuery(sql);) {
@@ -55,7 +55,7 @@ public class PaymentImplements implements PaymentDAO {
 		return p;
 	}
 
-	public void deletePayments(int receiptNo) throws Exception {
+	public void deletePayments(int receiptNo)  {
 		String sql = "update payments set receipt_active = 0 where receipt_no=?";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
 			pst.setInt(1,receiptNo);
