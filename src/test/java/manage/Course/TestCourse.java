@@ -7,7 +7,7 @@ import com.student.basics.DAOFactory;
 import com.student.basics.Logger;
 
 public class TestCourse {
-	private static Logger LOGGER = Logger.getInstance();
+	private static final Logger LOGGER = Logger.getInstance();
 
 	public static void main(String[] args) throws Exception {
 		CourseClass c1 = new CourseClass();
@@ -27,13 +27,9 @@ public class TestCourse {
 		LOGGER.getInput("Enter preReq: ");
 		String e =in.next();
 		c1.setPreReq(e);
-		//call dao
-		//CourseImplements daoimpl1 = new CourseImplements();
-		//daoimpl1.addCourses(c1);
 		CourseDAO dao = DAOFactory.getCourseDAO();
 		dao.addCourses(c1);
-		in.close();
-		//333	HTML	5000	50	
+		in.close();	
 	}
 
 }

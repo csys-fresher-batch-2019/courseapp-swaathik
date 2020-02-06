@@ -11,7 +11,7 @@ import com.student.basics.ConnectionUtil;
 import com.student.basics.Logger;
 
 public class CourseImplements implements CourseDAO{
-	private static Logger LOGGER = Logger.getInstance();
+	private static final Logger LOGGER = Logger.getInstance();
 	public void addCourses(CourseClass course) {
 		String sql = "insert into courses (course_code,course_name,course_fee,course_duration_days,pre_req) values(?,?,?,?,?)";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {

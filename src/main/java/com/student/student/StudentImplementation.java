@@ -8,7 +8,7 @@ import com.student.basics.ConnectionUtil;
 import com.student.basics.Logger;
 
 public class StudentImplementation implements StudentDAO {
-	private static Logger LOGGER = Logger.getInstance();
+	private static final Logger LOGGER = Logger.getInstance();
 
 	public void addStudents(StudentClass student)  {
 		String sql = "insert into students(adm_no,batch_code,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining,stud_user_name,stud_password)values(adm_no_sq.nextval,?,?,?,?,?,?,?,?)";

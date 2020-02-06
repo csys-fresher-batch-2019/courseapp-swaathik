@@ -8,7 +8,7 @@ import com.student.student.StudentClass;
 
 
 public class UserService {
-	private static Logger LOGGER = Logger.getInstance();
+	private static final Logger LOGGER = Logger.getInstance();
 
 	private UserService() {
 	    throw new IllegalStateException("Utility class");

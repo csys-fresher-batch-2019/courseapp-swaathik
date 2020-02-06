@@ -8,7 +8,7 @@ import com.student.basics.DAOFactory;
 import com.student.basics.Logger;
 
 public class TestStudent {
-	private static Logger LOGGER = Logger.getInstance();
+	private static final Logger LOGGER = Logger.getInstance();
 	public static void main (String[] args) throws Exception{
 		Scanner in = new Scanner(System.in);
 		StudentClass s1 = new StudentClass();
@@ -29,8 +29,6 @@ public class TestStudent {
 		s1.setUserName(in.next());
 		LOGGER.getInput("Enter the password : (for login)");
 		s1.setPassWord(in.next());
-//		StudentImplements daoImpl2 = new StudentImplements();
-//		daoImpl2.addStudents(s1);
 		StudentDAO dao = DAOFactory.getStudentDAO();
 		dao.addStudents(s1);
 		in.close();

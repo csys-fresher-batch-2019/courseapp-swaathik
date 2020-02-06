@@ -9,7 +9,7 @@ import com.student.batch.BatchDAO;
 
 import java.util.Scanner;
 public class TestBatch {
-	private static Logger LOGGER = Logger.getInstance();
+	private static final Logger LOGGER = Logger.getInstance();
 	public static void main(String[] args) throws Exception {
 		//input
 		BatchClass b1 = new BatchClass();

@@ -1,7 +1,7 @@
-package manage.Course;
+//package manage.Course;
 //import com.student.client.WalletAPI;
-import com.student.course.CourseDAO;
-import com.student.basics.DAOFactory;
+//import com.student.course.CourseDAO;
+//import com.student.basics.DAOFactory;
 //import com.student.basics.Logger;
 //
 //import java.util.Scanner;

@@ -10,7 +10,7 @@ import java.util.List;
 import com.student.basics.ConnectionUtil;
 import com.student.basics.Logger;
 public class PaymentImplements implements PaymentDAO {
-	private static Logger LOGGER = Logger.getInstance();
+	private static final Logger LOGGER = Logger.getInstance();
 	public void addPayments(PaymentClass payment)  {
 		String sql = "insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks) values(receipt_no_sq.nextval,?,?,?,?)";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {

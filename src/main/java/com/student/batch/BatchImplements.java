@@ -12,7 +12,7 @@ import com.student.basics.Logger;
 
 
 public class BatchImplements implements BatchDAO {
-	private static Logger LOGGER = Logger.getInstance();
+	private static final Logger LOGGER = Logger.getInstance();
 	public void addBatches(BatchClass batch) {
 		String sql = "insert into Batches(batch_code,course_code,course_name,starting_date,end_date) values(?,?,?,?,?)";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
