@@ -31,11 +31,16 @@ public class CourseImplements implements CourseDAO{
 
 	public void updateCourses(int courseCode) throws Exception {
 		String sql = "update courses set course_duration_days=45 where course_code=?";
-		Connection connection = ConnectionUtil.getConnection();
-		PreparedStatement pst = connection.prepareStatement(sql);
-		pst.setInt(1,courseCode);
-		int rows = pst.executeUpdate();
-		LOGGER.info("No of rows Updated : "+rows);
+		
+		
+		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
+			pst.setInt(1,courseCode);
+			int rows = pst.executeUpdate();
+			LOGGER.info("No of rows Updated : "+rows);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

@@ -6,10 +6,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import com.student.basics.ConnectionUtil;
 
+
 public class BatchImplements implements BatchDAO {
+	
 	public void addBatches(BatchClass batch) throws Exception {
 		String sql = "insert into Batches(batch_code,course_code,course_name,starting_date,end_date) values(?,?,?,?,?)";
 		try(Connection connection = ConnectionUtil.getConnection();PreparedStatement pst = connection.prepareStatement(sql);) {
