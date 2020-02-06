@@ -10,20 +10,20 @@ import com.student.student.StudentDAO;
 import com.student.student.StudentImplementation;
 
 public class DAOFactory {
+	private DAOFactory() {
+	    throw new IllegalStateException("Utility class");
+	  }
+
 public static CourseDAO getCourseDAO() {
-	CourseDAO  courseDAO = new CourseImplements();
-	return courseDAO;
+	return new CourseImplements();
 }
 public static BatchDAO getBatchDAO() {
-	BatchDAO  batchDAO = new BatchImplements();
-	return batchDAO;
+	return new BatchImplements();
 }
-public static StudentDAO getStudentDAO() {
-	StudentDAO  studentDAO = new StudentImplementation();
-	return studentDAO;
+public static StudentDAO getStudentDAO() { 
+	return new StudentImplementation();
 }
 public static PaymentDAO getPaymentDAO() {
-	PaymentDAO  paymentDAO = new PaymentImplements();
-	return paymentDAO;
+	return  new PaymentImplements();
 }
 }
