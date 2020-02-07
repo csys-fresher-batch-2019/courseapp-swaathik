@@ -20,7 +20,7 @@ public class UserService {
 			stmt.registerOutParameter(3, Types.VARCHAR);
 			stmt.executeUpdate();
 			String status=stmt.getString(3);
-			System.out.println("Status = "+status);
+			LOGGER.info("Status = "+status);
 			if(status.equals("Success")) {
 
 			LOGGER.debug("Logged In");
