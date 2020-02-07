@@ -14,12 +14,13 @@ public class UserService {
 	    throw new IllegalStateException("Utility class");
 	  }
 	public static boolean login(StudentClass user)  {
-		try(Connection con = ConnectionUtil.getConnection();CallableStatement stmt=con.prepareCall("{call login_procedure(?,?,?)}");) {
+		try(Connection con = ConnectionUtil.getConnection();CallableStatement stmt=con.prepareCall("{call login_procedure(?,?,?)}")) {
 			stmt.setString(1,user.getUserName());
 			stmt.setString(2, user.getPassWord());
 			stmt.registerOutParameter(3, Types.VARCHAR);
 			stmt.executeUpdate();
 			String status=stmt.getString(3);
+			System.out.println("Status = "+status);
 			if(status.equals("Success")) {
 
 			LOGGER.debug("Logged In");

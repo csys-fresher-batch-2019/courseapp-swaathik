@@ -3,8 +3,10 @@ package com.student.course;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.student.basics.ConnectionUtil;
@@ -55,24 +57,65 @@ public class CourseImplements implements CourseDAO{
 
 	public List<CourseClass> orderByCourseName()  {
 		List<CourseClass> c = new ArrayList<>();
-		String sql = "select course_name,course_code from courses order by course_name";
+		String sql = "select course_name,course_code,course_fee,course_duration_days,pre_req from courses";
 		
 		
 		try(Connection connection = ConnectionUtil.getConnection();Statement stmt = connection.createStatement();ResultSet rs = stmt.executeQuery(sql);) {
 			
 			while (rs.next()) {
-				String courseName = rs.getString("course_name");
-				LOGGER.debug("Course Name : "+courseName);
+				String cName = rs.getString("course_name");
+				LOGGER.debug("Course Name : "+cName);
 				int courseCode = rs.getInt("course_code");
 				LOGGER.debug("Course Code : "+courseCode);
+				int courseFee = rs.getInt("course_fee");
+				LOGGER.debug("Course Fee : "+courseFee);
+				int courseDurationDays = rs.getInt("course_duration_days");
+				LOGGER.debug("Course Duration(days) : "+courseDurationDays);
+				String preReq = rs.getString("pre_req");
+				LOGGER.debug("Pre Requisite : "+preReq);
+				
 				CourseClass course = new CourseClass();
-				course.setCourseName(courseName);
-				course.setCourseCode(courseCode);;
+				course.setCourseName(cName);
+				course.setCourseCode(courseCode);
+				course.setCourseFee(courseFee);
+				course.setCourseDurationDays(courseDurationDays);
+				course.setPreReq(preReq);
 				c.add(course);
 			}
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			LOGGER.debug(e);
 		}
 		return c;
+	}
+
+	@Override
+	public List<CourseClass> orderBy(String courseName)  {
+		List<CourseClass> list = new ArrayList<>();
+		String sql = "select course_fee,course_duration_days,pre_req from courses where course_name=?";	
+		try(Connection connection = ConnectionUtil.getConnection();
+		PreparedStatement pst = connection.prepareStatement(sql)){
+		pst.setString(1, courseName);
+		try(ResultSet rs = pst.executeQuery()){
+				
+				while(rs.next()) {
+					 int courseFee = rs.getInt("course_fee");
+					LOGGER.debug(courseFee);
+					int courseDurationDays = rs.getInt("course_duration_days");
+					LOGGER.debug(courseDurationDays);
+					String preReq = rs.getString("pre_Req");
+					LOGGER.debug(preReq);
+					CourseClass course = new CourseClass();
+					course.setCourseFee(courseFee);
+					course.setCourseDurationDays(courseDurationDays);
+					course.setPreReq(preReq);
+					list.add(course);
+				}
+		}
+		} catch (SQLException e) {
+			
+			LOGGER.debug(e);
+		}
+	  		return list;
 	}
 }

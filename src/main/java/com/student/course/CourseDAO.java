@@ -10,7 +10,8 @@ public interface CourseDAO {
 	void deleteCourses(int courseCode) ;
 	
 	List<CourseClass> orderByCourseName();
-	
+	 
+	List<CourseClass> orderBy(String courseName) ;
   
 	
 
