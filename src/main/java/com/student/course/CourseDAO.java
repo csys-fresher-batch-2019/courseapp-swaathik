@@ -13,6 +13,6 @@ public interface CourseDAO {
 	 
 	List<CourseClass> orderBy(String courseName) ;
   
+	int getCourseFee(int courseCode);
 	
-
 }

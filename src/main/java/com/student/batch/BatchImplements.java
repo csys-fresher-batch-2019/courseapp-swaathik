@@ -3,7 +3,8 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,28 +50,31 @@ public class BatchImplements implements BatchDAO {
 		} catch (Exception e) {
 			LOGGER.debug(e);
 		}
-		
-		
 	}
+		
 
-	public List<BatchClass> displayBatchCodeCourseCode() {
+	public List<BatchClass> displayBatchCodeCourseCode(String courseName) throws SQLException {
 		List<BatchClass> b = new ArrayList<>();
-		String sql = "select batch_code,course_code,course_name from batches";
-		try(Connection connection = ConnectionUtil.getConnection();Statement stmt = connection.createStatement();ResultSet rs = stmt.executeQuery(sql);) {
+		String sql = "select batch_code,starting_date,end_date from batches where course_name=?";
+		try(Connection connection = ConnectionUtil.getConnection();
+				PreparedStatement pst = connection.prepareStatement(sql)){
+						pst.setString(1, courseName);
+				try(ResultSet rs = pst.executeQuery()){
 			while (rs.next()) {
 				int batchCode = rs.getInt("batch_code");
-				int courseCode = rs.getInt("course_code");
-				String courseName = rs.getString("course_name");
-				LOGGER.info("Batch Code : "+batchCode+" "+"Course Code : "+courseCode+"Course Name : "+courseName);
+				LocalDate startingDate = rs.getDate("starting_date").toLocalDate();
+				LocalDate endDate = rs.getDate("end_date").toLocalDate();
+				LOGGER.info("Batch Code : "+batchCode+" "+"Starting Date : "+startingDate+"End Date : "+endDate);
 				BatchClass batch = new BatchClass();
 				batch.setBatchCode(batchCode);
-				batch.setCourseCode(courseCode);
-				batch.setCourseName(courseName);
+				batch.setStartingDate(startingDate);
+				batch.setEndDate(endDate);
 				b.add(batch);
 			}
 		} catch (Exception e) {
 			LOGGER.debug(e);
 		}
 		return b;
-	}
+}
+	}	
 }

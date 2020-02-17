@@ -12,8 +12,6 @@ public class TestStudent {
 	public static void main (String[] args) throws Exception{
 		Scanner in = new Scanner(System.in);
 		StudentClass s1 = new StudentClass();
-		LOGGER.getInput("Enter Batch Code : ");
-		s1.setBatchCode(in.nextInt());
 		LOGGER.getInput("Enter Full Name : ");
 		s1.setFullName(in.next());
 		LOGGER.getInput("Enter Father Name : ");

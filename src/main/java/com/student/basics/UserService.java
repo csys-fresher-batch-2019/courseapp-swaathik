@@ -22,7 +22,6 @@ public class UserService {
 			String status=stmt.getString(3);
 			LOGGER.info("Status = "+status);
 			if(status.equals("Success")) {
-
 			LOGGER.debug("Logged In");
 			return true;
 			}

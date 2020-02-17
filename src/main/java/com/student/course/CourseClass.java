@@ -5,6 +5,13 @@ public class CourseClass {
 	private int courseFee;
 	private int courseDurationDays;
 	private String preReq;
+	private String course_image;
+	public String getCourse_image() {
+		return course_image;
+	}
+	public void setCourse_image(String course_image) {
+		this.course_image = course_image;
+	}
 	public int getCourseCode() {
 		return courseCode;
 	}
@@ -40,7 +47,8 @@ public class CourseClass {
 	@Override
 	public String toString() {
 		return "CourseClass [courseCode=" + courseCode + ", courseName=" + courseName + ", courseFee=" + courseFee
-				+ ", courseDurationDays=" + courseDurationDays + ", preReq=" + preReq + "]";
+				+ ", courseDurationDays=" + courseDurationDays + ", preReq=" + preReq + ", course_image=" + course_image
+				+ "]";
 	}
 	
 }
