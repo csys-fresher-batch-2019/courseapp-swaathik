@@ -4,7 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface BatchDAO {
-	 
+	
+	
 	void addBatches(BatchClass batch);
 	
 

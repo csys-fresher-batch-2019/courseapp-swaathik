@@ -2,9 +2,6 @@ package com.student.basics;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
-import org.jdbi.v3.core.Jdbi;
-import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 public class ConnectionUtil {
 	private static final Logger LOGGER = Logger.getInstance();
 	private ConnectionUtil() {
@@ -22,10 +19,5 @@ public class ConnectionUtil {
 		return (DriverManager.getConnection("jdbc:oracle:thin:@"+server+":1521:XE","system","oracle"));
 		
 	}
-	public static Jdbi getJdbi() throws SQLException {
-		Connection connection = ConnectionUtil.getConnection();
-		Jdbi jdbi = Jdbi.create(connection);
-		jdbi.installPlugin(new SqlObjectPlugin());
-		return jdbi;
-	}
+	
 }
