@@ -44,6 +44,7 @@ public class CourseClass {
 	public void setPreReq(String preReq) {
 		this.preReq = preReq;
 	}
+	/////
 	@Override
 	public String toString() {
 		return "CourseClass [courseCode=" + courseCode + ", courseName=" + courseName + ", courseFee=" + courseFee
