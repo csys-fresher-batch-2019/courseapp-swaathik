@@ -3,8 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import org.jdbi.v3.core.Jdbi;
-import org.jdbi.v3.sqlobject.SqlObjectPlugin;
+
 public class ConnectionUtil {
 	private static final Logger LOGGER = Logger.getInstance();
 	private ConnectionUtil() {
@@ -25,16 +24,5 @@ public class ConnectionUtil {
 	public static void main(String[] args) throws SQLException {
 		System.out.println(getConnection());
 	}
-	public static Jdbi getJdbi()  {
-		Jdbi jdbi = null;
-		try {
-		Connection connection = ConnectionUtil.getConnection();
-		Jdbi jdbi1 = Jdbi.create(connection);
-		jdbi1.installPlugin(new SqlObjectPlugin());
-		}
-		catch(Exception e) {
-			throw new RuntimeException(e);
-		}
-		return jdbi;
-	}
+	
 }
