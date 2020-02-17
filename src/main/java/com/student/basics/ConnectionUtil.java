@@ -14,6 +14,7 @@ public class ConnectionUtil {
 		} catch (ClassNotFoundException e) {
 			LOGGER.debug(e);
 		}
+		
 		String server = "CSLH2024";
 		return (DriverManager.getConnection("jdbc:oracle:thin:@"+server+":1521:XE","system","oracle"));
 		
